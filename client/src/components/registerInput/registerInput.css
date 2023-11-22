@@ -1,0 +1,43 @@
+.riInput{
+    height: 40px;
+    max-width: 400px;
+    padding: 5px 10px;
+    border: solid #0174BE;
+    border-radius: 3px;
+}
+.riInput:focus{
+    outline: none;
+}
+
+.riContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+}
+
+.riLabel{
+    font-size: 14px;
+}
+
+.riErrorMessage{
+    font-size: 12px;
+    color: red;
+    padding: 3px;
+    display: none;
+}
+
+.riInput:invalid[checkedinput="true"] ~ .riErrorMessage{
+    display: block;
+}
+
+.riInput:invalid[checkedinput="true"] {
+    border: solid red;
+}
+
+.riInputRemind{
+    font-size: 12px;
+    color: grey;
+    padding: 3px
+}
+

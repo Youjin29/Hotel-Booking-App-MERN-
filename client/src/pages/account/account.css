@@ -1,0 +1,94 @@
+.accountOuterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 30px
+}
+
+.accountContentContainer{
+    min-width: 800px;
+    width: 70%;
+}
+
+.accountContentContainer>h1{
+    font-size: 30px
+}
+
+.accountTab{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.accountTab>div{
+    position: relative;
+    padding: 10px 20px;
+    width: 25%;
+    border-bottom: 1px solid grey;
+}
+
+.accountTab>div.active:before{
+    position: absolute;
+    content: "";
+    right: 1px;
+    left: 1px;
+    bottom: 0px;
+    border: solid 1.5px #3c5d87;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 5s ease;
+}
+
+.accountTab>div>button{
+    width: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 15px;
+    color: grey;
+    padding: 4px 0px;
+}
+
+.accountTab>div>button.active{
+    color: #3c5d87;
+}
+
+.accountTab>div>button:hover{
+    background-color: rgb(7, 102, 173, 0.3);
+    transition: 1s ease;
+    color: #3c5d87
+}
+
+.accountNoBookings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accountNoBookings span{
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3c5d87;
+}
+
+.accountNoBookings button{
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+    background-color: #3876BF;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.accountNoBookings button:hover{
+    background-color:#3c5d87
+}

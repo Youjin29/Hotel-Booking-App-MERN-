@@ -1,0 +1,103 @@
+.login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.lRightContainer{
+    flex:2;
+    background: linear-gradient(300deg, #0C356A, #0174BE, #00A9FF);
+    background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+.lRightWrapper{
+    position: relative;
+    top: 20%;;
+    left: 5%;
+}
+
+.lPhrase{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #F5F7F8;
+    font-style: oblique;
+    word-wrap: break-word;
+}
+
+
+.lContainer{
+    flex:1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.lInput{
+    height: 40px;
+    width: 70%;
+    max-width: 400px;
+    padding: 5px 10px;
+    border: solid #0174BE;
+    border-radius: 3px;
+}
+
+.lInput:focus{
+    outline: none;
+}
+
+.lButton{
+    height: 40px;
+    width: 75%;
+    max-width: 400px;
+    margin: 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #3876BF;
+    color: white;
+    font-size: 15px
+}
+.lButton:hover{
+    background-color:#3c5d87
+}
+
+.loginHeader{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* 
+.lRightContainer {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+   */

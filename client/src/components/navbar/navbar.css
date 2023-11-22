@@ -1,0 +1,98 @@
+.navbar{
+  height: 70px;
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  
+}
+
+.navContainer{
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px
+}
+
+.logo{
+  font-weight: 700;
+  font-size: 25px
+}
+
+.navDropdownContainer{
+  position: relative;
+  cursor: pointer;
+}
+
+.navProfileHeader{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navUserIcon{
+  background-color: white;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  position: relative;
+}
+
+.navUserIconIcon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.navUsername{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  align-items: center;
+}
+
+.navDropdownMenu{
+  background-color: white;
+  position: absolute;
+  right: 0px;
+  top: 60px;
+  z-index: 999;
+  width: 220px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.navDropdownMenu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+
+.navDropdownMenu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+.navButton{
+  margin-left: 20px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #003580;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.navDropdownMenu ul {
+  width: 100%;
+  transform: translateX(-40px);
+}

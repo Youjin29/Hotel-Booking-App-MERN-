@@ -1,0 +1,42 @@
+.pList{
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pListItem{
+  flex:1;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.pListItem:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pListImg{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.pListTitles>h1{
+  font-size: 18px;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.pListTitles>h2{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.pListTitles{
+  padding: 10px;
+  padding-top: 0px;
+}

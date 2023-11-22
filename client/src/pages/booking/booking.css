@@ -1,0 +1,162 @@
+.bookingPageH2{
+    font-weight: 600;
+    font-size: 16px
+}
+
+.bookingPageContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 30px
+}
+
+.bookingPageWrapper{
+    min-width: 800px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-weight: 500;
+}
+
+.bookingPageWrapper>div{
+    border-radius: 20px
+}
+
+.bookingPageBackArrow{
+    width: 0px;
+    height: 0px;
+    border: solid black 10px;
+    border-color: transparent #003580 transparent transparent;
+}
+
+.bookingPageHotelDiv{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    overflow: hidden
+}
+
+.bookingPageHotelDiv>.bookingPageHotelName{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+
+.bookingPageHotelDiv>span{
+    margin-bottom: 8px;
+}
+
+.bookingPageHotelDiv>img{
+   height: 250px;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.bookingPageHotelDiv>span{
+    padding: 3px 0px 0px 10px;
+}
+
+.bookingPageHotelDatesWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: solid 1px black;
+    height: 70px
+}
+
+.bookingPageHotelDatesWrapper>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.bookingPageHotelDatesWrapper>.bookingPageHotelNoOfNights{
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: #ccc ;
+    color: grey
+}
+
+.bookingPageHotelDatesTitle{
+    font-size: 12px;
+    color: grey
+}
+
+.bookingPageRoomDiv{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px
+}
+
+
+
+.bookingPageRoomDiv>table{
+    margin: auto;
+}
+
+.bookingPageRoomDiv>table b{
+    font-weight: 600;
+    color: #003580;
+}
+
+.bookingPageRoomDiv>table th{
+    font-weight: 600
+}
+
+.bookingPageGuestDiv{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.bookingPageGuestDiv>div{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 10px 0px;
+}
+
+.bookingPageGuestDiv>div>span{
+    font-size: 15px
+}
+
+.bookingPageGuestDiv>h2{
+    margin-bottom: 15px;
+}
+
+.bookingPageGuestDiv>div>h3{
+    font-size: 13px;
+    color: grey;
+    font-weight: 500
+}
+
+.bookingPagePolicyDiv{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.bookingPagePaymentDiv{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.bookingPagePaymentDiv>div{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+}

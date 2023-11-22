@@ -1,0 +1,43 @@
+.featured{
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+}
+
+.featuredItem{
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  flex:1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.featuredItem:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.featuredImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredTitles{
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+h1{
+  font-size: 20px
+}
+
+h2{
+  font-size: 15px
+}

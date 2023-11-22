@@ -1,0 +1,215 @@
+.confirmContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    gap: 50px;
+}
+
+.confirmHotelDiv{
+    display: flex;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.confirmHotelImg{
+    display: flex;
+    flex: 2;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.confirmHotelDetails{
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    padding: 50px
+}
+
+.confirmHotelName{
+    font-size: 20px;
+}
+
+.confirmDatesDiv{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.confirmDatesArrow{
+    font-size: 25px;
+}
+
+.confirmCheckDate{
+    font-weight: 500;
+}
+
+.confirmWrapper{
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.confirmContactDetails{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px;
+    border-right: solid black;
+}
+
+.confirmContactHeader{
+    width: 100%;
+}
+
+.confirmContactLabel{
+    font-weight: 500;
+}
+
+.confirmFullNameDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    margin: 5px 0px;
+    margin-top: 30px;
+ 
+}
+
+.confirmEmailDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0px;
+    gap: 5px;
+}
+
+.confirmPhoneCountryDiv{
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    justify-content: space-between  ;
+}
+
+.confirmCountryDiv{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.confirmPhoneDiv{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.confirmGuestDiv{
+    margin: 5px 0px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.confirmGuestCheckbox{
+    height: 15px;
+    width: 15px;
+}
+
+.confirmContactInput{
+    border-radius: 2px;
+}
+
+.confirmContactInput[checkinput="true"]:invalid{
+    border: solid red;
+}
+
+.confirmCountry::placeholder {
+    font-style: italic;
+  }
+
+.confirmPayment{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+    padding: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.confirmPaymentList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.confirmFinalPrice{
+    color:#0C356A;
+
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    text-align: center;
+    padding: 5px
+}
+
+.confirmRowData{
+    padding-bottom: 40px
+}
+
+.confirmRowHeader{
+    padding-bottom: 20px;
+    border-bottom: solid black;
+}
+
+.confirmSpacer{
+    width: 15px;
+}
+
+.confirmPaddingTop{
+    padding-top: 60px
+}
+
+.confirmButton{
+    margin-top: 20px;
+    width: 90%;
+    border-radius: 3px;
+    border: none;
+    background-color: #3876BF;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.confirmButton:hover{
+    background-color:#3c5d87
+}
+
+
+.confirmFooterDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 30px;
+}
