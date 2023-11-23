@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { DateRange } from "react-date-range";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
@@ -37,6 +37,9 @@ const Header = ({ type, homepage }) => {
     room: 1,
   });
   const [active, setActive] = useState("stays");
+  const destinationRef = useRef("");
+  const dateRef = useRef("");
+  const optionsRef = useRef("");
 
   const navigate = useNavigate();
 
@@ -61,6 +64,19 @@ const Header = ({ type, homepage }) => {
     })
     navigate("/hotels", { state: { destination, dates, options } });
   };
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!destinationRef.current.contains(e.target) && !dateRef.current.contains(e.target) && !optionsRef.current.contains(e.target)) {
+        setOpenDestinations(false);
+        setOpenDate(false);
+        setOpenOptions(false);
+      }
+    }
+    document.addEventListener("mousedown", handler);
+
+    return(() => document.removeEventListener("mousedown", handler));
+  })
 
   return (
     <div className={`header ${homepage === "true" && "headerHomePage"}` }>
@@ -101,7 +117,7 @@ const Header = ({ type, homepage }) => {
               This app allows user to create account, sign in and book hotels. You may also review or delete your bookings in your bookings page. The same booking (identical room and date) cannot be booked twice
             </p>
             <div className="headerSearch">
-              <div className="headerSearchItem">
+              <div className="headerSearchItem" ref={destinationRef}>
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <div>
                 <input
@@ -109,7 +125,7 @@ const Header = ({ type, homepage }) => {
                   placeholder="Where are you going?"
                   className="headerSearchInput"
                   onChange={(e) => {setDestination(e.target.value);setOpenDestinations(false)}}
-                  onClick={() => setOpenDestinations(prev => !prev)}
+                  onClick={() => {setOpenDestinations(prev => !prev);setOpenDate(false);setOpenOptions(false)}}
                   value={destination}
                 />
                 { (openDestinations) ?
@@ -135,10 +151,10 @@ const Header = ({ type, homepage }) => {
                 : null}
                 </div>
               </div>
-              <div className="headerSearchItem">
+              <div className="headerSearchItem" ref={dateRef}>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
-                  onClick={() => setOpenDate(!openDate)}
+                  onClick={() => {setOpenDate(!openDate);setOpenOptions(false);setOpenDestinations(false)}}
                   className="headerSearchText"
                 >{`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
                   dates[0].endDate,
@@ -155,10 +171,10 @@ const Header = ({ type, homepage }) => {
                   />
                 )}
               </div>
-              <div className="headerSearchItem">
+              <div className="headerSearchItem"  ref={optionsRef}>
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <span
-                  onClick={() => setOpenOptions(!openOptions)}
+                  onClick={() => {setOpenOptions(!openOptions);setOpenDate(false);setOpenDestinations(false)}}
                   className="headerSearchText"
                 >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
                 {openOptions && (

@@ -7,7 +7,7 @@
 }
 
 .header.headerHomePage{
-  background-image: url("https://images.unsplash.com/photo-1645392279709-8cb343045191?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("../../images/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -149,8 +149,11 @@
 }
 
 .headerSearchText {
-  color: lightgray;
+  color: black;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .date {
