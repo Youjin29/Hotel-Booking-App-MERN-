@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSuitcase, faSquarePollVertical, faHeart, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import DropdownItem from "../dropdownItem/DropdownItem";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const { user, dispatch } = useContext(AuthContext)
   const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
   })
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${props.homepage === "true" && "navbarHomePage"}`}>
       <div className="navContainer">
         <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
         <span className="logo">geniebook</span>

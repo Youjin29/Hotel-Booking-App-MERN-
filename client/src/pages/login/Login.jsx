@@ -64,7 +64,7 @@ const Login = () => {
                 <input type="text" placeholder="Username" id="username" onChange={handleChange} className="lInput" autoFocus/>
                 <input type="password" placeholder="Password" id="password" onChange={handleChange} className="lInput"/>
                 <button id="submitLogin" disabled={loading} onClick={handleLogin} className="lButton">Login</button>
-                {error && <span>{error.message}</span>}
+                {loading? <span>Signing you in now, please wait...</span> : error && <span>{error.message}</span>}
             </div>
         </div>
     )

@@ -26,7 +26,6 @@
     word-wrap: break-word;
 }
 
-
 .lContainer{
     flex:1;
     height: 100%;
@@ -68,6 +67,10 @@
 .loginHeader{
     margin-top: 100px;
     margin-bottom: 20px;
+}
+
+.lButton:disabled{
+    background-color: grey;
 }
 
 @keyframes gradient {

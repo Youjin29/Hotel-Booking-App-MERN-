@@ -36,6 +36,7 @@ const Header = ({ type, homepage }) => {
     children: 0,
     room: 1,
   });
+  const [active, setActive] = useState("stays");
 
   const navigate = useNavigate();
 
@@ -69,35 +70,35 @@ const Header = ({ type, homepage }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div className="headerListSlider" value={active}></div>
+          <div className="headerListItem" onClick={() => {setActive("stays")}}>
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={() => {setActive("flights")}}>
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={() => {setActive("rentals")}}>
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
+          <div className="headerListItem" onClick={() => {setActive("attractions")}}>
+            <FontAwesomeIcon icon={faBed}/>
             <span>Attractions</span>
           </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
+          <div className="headerListItem"  onClick={() => {setActive("transports")}}>
+            <FontAwesomeIcon icon={faTaxi}/>
             <span>Airport taxis</span>
           </div>
         </div>
         {type !== "general" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+              Welcome to Geniebook, a hotel booking simulator.
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              This app allows user to create account, sign in and book hotels. You may also review or delete your bookings in your bookings page. The same booking (identical room and date) cannot be booked twice
             </p>
             <div className="headerSearch">
               <div className="headerSearchItem">

@@ -81,3 +81,8 @@
 .listResult {
   flex: 3;
 }
+
+.lsOptionText{
+  font-size: 13px;
+  font-weight: 600
+}

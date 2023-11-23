@@ -1,10 +1,16 @@
 .navbar{
   height: 70px;
-  background-color: #003580;
+  background-color: #0766AD;
   display: flex;
   justify-content: center;
   width: 100vw;
-  
+}
+
+.navbar.navbarHomePage{
+  /* background-color: #0766AD;
+  background-image: url("../../images/plane.jpg");
+  background-blend-mode: lighten;#818FB4 */
+  /* box-shadow: 10px 0px 50px 30px black; */
 }
 
 .navContainer{

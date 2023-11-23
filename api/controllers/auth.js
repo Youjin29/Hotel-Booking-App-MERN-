@@ -24,9 +24,9 @@ export const register = async (req, res, next) => {
       if (err.code === 11000) {
          const errorInput = JSON.stringify(Object.keys(err.keyValue)[0]).replaceAll("\"", "");
          const capitalizeError = errorInput.charAt(0).toUpperCase() + errorInput.slice(1);
-         next(createError(400, `${capitalizeError} is already used, please use another one.`));
+         next(createError(400, `${capitalizeError} is used`));
       } else {
-        next(err);
+        next(createError(500, "Something went wrong, please try again..."));
       }}
 };
 
@@ -42,13 +42,13 @@ export const login = async (req, res, next) => {
             
             res.cookie("access_token", token, {httpOnly: true}).status(200).json( {...otherDetails} );
          } else {
-            return next(createError(400, "Wrong password or username."));
+            return next(createError(400, "Wrong password or username"));
          }
        } else {
-        return next(createError(404, "User not found."));
+        return next(createError(404, "User not found"));
        }
     }catch (err) {
-       next(err);
+       next(createError(500, "Something went wrong, please try again"));
     }
 };
 
