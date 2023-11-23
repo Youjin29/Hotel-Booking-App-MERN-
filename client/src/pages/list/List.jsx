@@ -47,11 +47,11 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input placeholder={destination} onChange={(e) => setDestination(e.target.value)} type="text" />
+              <input className="lsItemDestinationInput" value={destination} onChange={(e) => setDestination(e.target.value)} type="text"/>
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
+              <span onClick={() => setOpenDate(!openDate)} className="lsItemDateInput">{`${format(
                 dates[0].startDate,
                 "MM/dd/yyyy"
               )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
@@ -68,13 +68,13 @@ const List = () => {
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per night</small>
+                    Min price <small>RM per night</small>
                   </span>
                   <input type="number" className="lsOptionInput" onChange={(e) => setMin(e.target.value)}/>
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per night</small>
+                    Max price <small>RM per night</small>
                   </span>
                   <input type="number" className="lsOptionInput" onChange={(e) => setMax(e.target.value)}/>
                 </div>
@@ -107,7 +107,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button onClick={handleClick}>Search</button>
+            <button className="lsButton" onClick={handleClick}>Search</button>
           </div>
           <div className="listResult">
             { loading? "Loading please wait..." :

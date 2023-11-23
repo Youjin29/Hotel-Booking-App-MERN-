@@ -11,8 +11,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: multiply;
-  background-color: #A7ECEE;
+  background-blend-mode: normal;
   /* box-shadow: inset 0px 0px 20px 1px #0766AD; */
   height: 400px;
   color: white
@@ -33,6 +32,10 @@
   gap: 40px;
   margin-bottom: 50px;
   position: relative;
+}
+
+.headerList.listMode{
+  margin-bottom: 20px
 }
 
 .headerListSlider {
@@ -79,6 +82,7 @@
   margin-left: 3.5px;
   margin-top: 2px;
   white-space: nowrap;
+  cursor: pointer;
   /* border-radius: 20px;
   border: 2px solid white; */
 }
@@ -110,6 +114,11 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+  border-radius: 5px
+}
+
+.headerBtn:hover{
+  background-color: #3c5d87;
 }
 
 .headerSearch {

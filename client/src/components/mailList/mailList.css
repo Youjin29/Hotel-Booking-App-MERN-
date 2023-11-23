@@ -29,3 +29,7 @@
   cursor: pointer;
   border-radius: 5px
 }
+
+.mailInputContainer>button:hover{
+  background-color: #EE9322;
+}

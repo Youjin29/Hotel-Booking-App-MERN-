@@ -17,8 +17,11 @@
   padding: 10px;
   border-radius: 10px;
   position: sticky;
-  top: 10px;
+  top: 70px;
   height: max-content;
+  border-color: #ccc;
+  border-width: 2px;
+  border-style: inset
 }
 
 .lsTitle{
@@ -85,4 +88,23 @@
 .lsOptionText{
   font-size: 13px;
   font-weight: 600
+}
+
+.lsButton{
+  border-radius: 5px
+}
+
+.lsButton:hover{
+  background-color: #3c5d87;
+}
+
+.lsItemDestinationInput{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.lsItemDateInput{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500
 }

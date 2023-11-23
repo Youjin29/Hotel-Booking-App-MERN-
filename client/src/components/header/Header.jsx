@@ -76,7 +76,7 @@ const Header = ({ type, homepage }) => {
     document.addEventListener("mousedown", handler);
 
     return(() => document.removeEventListener("mousedown", handler));
-  })
+  },[])
 
   return (
     <div className={`header ${homepage === "true" && "headerHomePage"}` }>
@@ -85,7 +85,9 @@ const Header = ({ type, homepage }) => {
           type === "general" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
+        <div className={
+          type === "general" ? "headerList listMode" : "headerList"
+        }>
           <div className="headerListSlider" value={active}></div>
           <div className="headerListItem" onClick={() => {setActive("stays")}}>
             <FontAwesomeIcon icon={faBed} />
