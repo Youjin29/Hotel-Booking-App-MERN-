@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext.js"; 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 
@@ -51,10 +51,17 @@ const Login = () => {
         })
     }, []);
 
+    const handleBack = () => {
+        navigate("/");
+    }
+
     return (
         <div className="login">
             <div className="lRightContainer">
                 <div className="lRightWrapper">
+                    <Link to="/" style={{textDecoration:"none"}}>
+                        <span className="loginLogo">geniebook</span>
+                    </Link>
                     <span className="lPhrase">Book your perfect stay with confidence.
                 </span>
                 </div>
@@ -64,6 +71,7 @@ const Login = () => {
                 <input type="text" placeholder="Username" id="username" onChange={handleChange} className="lInput" autoFocus/>
                 <input type="password" placeholder="Password" id="password" onChange={handleChange} className="lInput"/>
                 <button id="submitLogin" disabled={loading} onClick={handleLogin} className="lButton">Login</button>
+                <button id="loginBackButton" disabled={loading} onClick={handleBack} className="lButton">Back to home</button>
                 {loading? <span>Signing you in now, please wait...</span> : error && <span>{error.message}</span>}
             </div>
         </div>

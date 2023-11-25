@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./register.css";
 import RegisterInput from "../../components/registerInput/RegisterInput.jsx";
@@ -21,6 +21,7 @@ const Register = () => {
     });
 
     const [registerError, setRegisterError] = useState(null);
+    const [registerLoading, setRegisterLoading] = useState(false);
 
     const inputParams = [
         {
@@ -49,7 +50,7 @@ const Register = () => {
             type: "email" ,
             placeholder: "Email" ,
             label: "Email",
-            pattern: "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*$",
+            pattern: ".+.+.+",
             errorMessage: "Please enter a valid email.",
             required: true,
         },
@@ -111,17 +112,28 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
+            setRegisterLoading(true);
             const response = await axios.post("/api/auth/register", inputs);
             navigate("/login",{state: {isRegistered: true}});
         } catch(err) {
             setRegisterError(err.response.data);
         }
+        setRegisterLoading(false);
     };
+
+    const handleBack = () => {
+        navigate("/");
+    };
+
+    console.log(isValid)
 
     return (
         <div className="register">
             <div className="rLeftContainer">
                 <div className="rLeftWrapper">
+                    <Link to="/" style={{textDecoration:"none"}}>
+                        <span className="registerLogo">geniebook</span>
+                    </Link>
                     <span className="rPhrase">Are you ready for your next trip?
                 </span>
                 </div>
@@ -133,10 +145,13 @@ const Register = () => {
                     <RegisterInput key={input.id} {...input} onChange={onChange} value={inputs[input.name]}/>
                 )
                 }
-                <button id="submitRegister" disabled={!isValid.allInputs} className="registerButton" onClick={handleRegister}>Confirm</button>
+                <button id="submitRegister" disabled={!isValid.allInputs || registerLoading} className="registerButton" onClick={handleRegister}>Confirm</button>
+                <button id="loginBackButton" disabled={registerLoading} onClick={handleBack} className="registerButton">Back to home</button>
+                { registerLoading? <span style={{fontSize:"15px"}}>Signing you up now! Please wait...</span> : registerError &&
                 <div className="rDbErrorMessageContainer">
-                    <span className="dbErrorMessage">{registerError && registerError.message}</span>
+                    <span className="dbErrorMessage">{registerError.message}</span>
                 </div>
+                }
             </div>
         </div>
     )

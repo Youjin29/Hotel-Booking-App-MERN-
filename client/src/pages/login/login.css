@@ -13,9 +13,18 @@
 }
 
 .lRightWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     position: relative;
-    top: 20%;;
+    top: 10%;;
     left: 5%;
+}
+
+.loginLogo{
+    color: white;
+    font-weight: 700;
+    font-size: 25px
 }
 
 .lPhrase{
@@ -53,7 +62,7 @@
     height: 40px;
     width: 75%;
     max-width: 400px;
-    margin: 15px;
+    margin-top: 15px;
     border-radius: 3px;
     border: none;
     background-color: #3876BF;
@@ -62,6 +71,17 @@
 }
 .lButton:hover{
     background-color:#3c5d87
+}
+
+.loginBackButton{
+    height: 40px;
+    width: 75%;
+    max-width: 400px;
+    border-radius: 3px;
+    border: none;
+    background-color: #3876BF;
+    color: white;
+    font-size: 15px
 }
 
 .loginHeader{
