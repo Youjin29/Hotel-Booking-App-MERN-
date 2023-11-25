@@ -9,9 +9,12 @@ import roomsRoute from "./routes/rooms.js";
 import bookingRoute from "./routes/booking.js";
 import cookieParser from "cookie-parser";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express()
 const port = process.env.PORT || 8000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
  
 const connect = async function() {
 try {
