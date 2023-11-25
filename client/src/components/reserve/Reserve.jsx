@@ -10,7 +10,7 @@ const Reserve = ({setOpen, hotelId}) => {
 
     const [selectedRooms, setSelectedRooms] = useState({});
     const [openWarning, setOpenWarning] = useState(false);
-    const { data, loading} = useFetch(`http://localhost:3000/hotels/rooms/${hotelId}`);
+    const { data, loading} = useFetch(`/hotels/rooms/${hotelId}`);
     const { dates } = useContext(SearchContext);
     const navigate = useNavigate();
 
