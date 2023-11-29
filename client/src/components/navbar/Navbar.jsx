@@ -29,9 +29,11 @@ const Navbar = (props) => {
 
   useEffect(() => {
     let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setOpenMenu(false);
-      }
+      if (user) {
+        if (!menuRef.current.contains(e.target)) {
+          setOpenMenu(false);
+        }
+    }
     }
     document.addEventListener("mousedown", handler);
 

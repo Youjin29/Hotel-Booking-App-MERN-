@@ -37,9 +37,9 @@ const Header = ({ type, homepage }) => {
     room: 1,
   });
   const [active, setActive] = useState("stays");
-  const destinationRef = useRef("");
-  const dateRef = useRef("");
-  const optionsRef = useRef("");
+  const destinationRef = useRef(null);
+  const dateRef = useRef(null);
+  const optionsRef = useRef(null);
 
   const navigate = useNavigate();
 
@@ -50,6 +50,21 @@ const Header = ({ type, homepage }) => {
         [name]: operation === "i" ? options[name] + 1 : options[name] - 1, }
     });
   };
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (homepage === "true") {
+        if (!destinationRef.current.contains(e.target) && !dateRef.current.contains(e.target) && !optionsRef.current.contains(e.target)) {
+          setOpenDestinations(false);
+          setOpenDate(false);
+          setOpenOptions(false);
+        }
+      }
+    }
+    document.addEventListener("mousedown", handler);
+
+    return(() => document.removeEventListener("mousedown", handler));
+  },[homepage])
 
   const dispatch = useContext(SearchDispatchContext);
 
@@ -64,19 +79,6 @@ const Header = ({ type, homepage }) => {
     })
     navigate("/hotels", { state: { destination, dates, options } });
   };
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!destinationRef.current.contains(e.target) && !dateRef.current.contains(e.target) && !optionsRef.current.contains(e.target)) {
-        setOpenDestinations(false);
-        setOpenDate(false);
-        setOpenOptions(false);
-      }
-    }
-    document.addEventListener("mousedown", handler);
-
-    return(() => document.removeEventListener("mousedown", handler));
-  },[])
 
   return (
     <div className={`header ${homepage === "true" && "headerHomePage"}` }>
