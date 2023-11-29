@@ -37,13 +37,13 @@ const Featured = () => {
           <h2>{data[1]} properties</h2>
         </div>
       </div>
-      <div className="featuredItem">
+      <div className="featuredItem" onClick={() => {navigate("/hotels",{state:{destination:"Kota Kinabalu",dates:dates,options:options}})}}>
         <img
           src="https://images.unsplash.com/photo-1663168074436-c6fc315bfd61?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           className="featuredImg"
         />
-        <div className="featuredTitles" onClick={() => {navigate("/hotels",{state:{destination:"Kota Kinabalu",dates:dates,options:options}})}}>
+        <div className="featuredTitles">
           <h1>Kota Kinabalu </h1>
           <h2>{data[2]} properties</h2>
         </div>
