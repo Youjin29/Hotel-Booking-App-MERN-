@@ -72,6 +72,9 @@ const Login = () => {
                 <input type="password" placeholder="Password" id="password" onChange={handleChange} className="lInput"/>
                 <button id="submitLogin" disabled={loading} onClick={handleLogin} className="lButton">Login</button>
                 <button id="loginBackButton" disabled={loading} onClick={handleBack} className="lButton">Back to home</button>
+                <Link to="/register" style={{color:"#3c5d87"}}>
+                    <span style={{fontSize:"14px"}}>Sign up now!</span>
+                </Link>
                 {loading? <span>Signing you in now, please wait...</span> : error && <span>{error.message}</span>}
             </div>
         </div>
