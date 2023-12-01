@@ -33,7 +33,7 @@ export const verifyUser = (req, res, next) => {
         if (user.id === req.params.id || user.isAdmin) {
             next()
         } else {
-            return next(createError(401, "Please sign in."));
+            return next(createError(401, "You are not authorized."));
         }
     })
 }

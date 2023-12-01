@@ -18,13 +18,13 @@ const BookingAlert = (props) => {
 
     const handleCancel = async () => {
         try{
-            console.log(user._id)
             await axios.delete(`/booking/${user._id}/${props.value}`);
             props.setOpen(false);
             navigate("/account");
             props.refetch();
         } catch(err) {
-            alert("Something went wrong, please sign in again!");
+            alert("You are not authenticated, please log in again");
+            dispatch({type:"LOG_OUT"})   
         }
     }
 

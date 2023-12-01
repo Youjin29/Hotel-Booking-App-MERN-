@@ -125,8 +125,6 @@ const Register = () => {
         navigate("/");
     };
 
-    console.log(isValid)
-
     return (
         <div className="register">
             <div className="rLeftContainer">

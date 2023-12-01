@@ -25,6 +25,7 @@ export const register = async (req, res, next) => {
          const errorInput = JSON.stringify(Object.keys(err.keyValue)[0]).replaceAll("\"", "");
          const capitalizeError = errorInput.charAt(0).toUpperCase() + errorInput.slice(1);
          next(createError(400, `${capitalizeError} is used`));
+         console.log(err)
       } else {
         next(createError(500, "Something went wrong, please try again..."));
       }}

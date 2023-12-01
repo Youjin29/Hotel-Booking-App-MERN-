@@ -18,7 +18,7 @@ const Confirm = () => {
     const navigate = useNavigate();
     const hotelId = location.pathname.split("/")[2];
     const { dates } = useContext(SearchContext);
-    const { user, dispatch } = useContext(AuthContext);
+    const { user, dispatch: authDispatch } = useContext(AuthContext);
     const [ userInfos, setUserInfos ] = useState({
         name: undefined,
         email: undefined,
@@ -100,26 +100,31 @@ const Confirm = () => {
         if (userInfos.name && userInfos.email && userInfos.phone) {
             setShowWarning(false);
             try{
-                const response = await axios.post(`/booking/${user._id}`, booking, { withCredentials: true });
+                await axios.post(`/booking/${user._id}`, booking, { withCredentials: true });
                 try {
                     const rooms = Object.values(selectedRooms).flat();
                     await Promise.all(rooms.map(roomId => {
                         const response = axios.put(`/rooms/availability/${roomId}`, {dates: allDates});
                         return response.data;
-                    }))
+                    }));
                     setShowBookingAlert(true);
+                    
                 } catch(err) {
-                dispatch({type:"LOG_OUT"})
+                authDispatch({type:"LOG_OUT"})
                 }
             }catch(err) {
-                dispatch({type:"LOG_OUT"})
+                if (err.response.data.status === 500) {
+                alert("Something went wrong, redirecting...");
+                navigate("/");
+                } else {
+                    authDispatch({type:"LOG_OUT"})      
+                }
             }
         }
         else {
             setShowWarning(true);
     }
-    }
-
+    };
 
     return (
         <div>

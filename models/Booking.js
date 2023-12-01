@@ -40,4 +40,6 @@ const bookingSchema = new mongoose.Schema({
     }
 }, {timestamps: true});
 
+bookingSchema.index({roomsDetail:1, startDate:1}, {unique:true});
+
 export default mongoose.model("Booking", bookingSchema);
