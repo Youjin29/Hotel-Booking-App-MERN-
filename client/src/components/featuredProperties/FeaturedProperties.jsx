@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const FeaturedProperties = () => {
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("hotels?featured=true&limit=4");
+  const {data, loading, error} = useFetch("hotels/getAllHotels?featured=true&limit=4");
 
   return (
     <div className="fp">
