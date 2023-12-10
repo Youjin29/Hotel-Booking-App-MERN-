@@ -19,7 +19,7 @@ const List = () => {
   const [max, setMax] = useState(null);
   const dispatch = useContext(SearchDispatchContext);
 
-  const {data, loading, error, refetch } = useFetch(`/hotels?city=${destination}&max=${max||9999}&min=${min||0}`)
+  const {data, loading, error, refetch } = useFetch(`/hotels/getAllHotels?city=${destination}&max=${max||9999}&min=${min||0}`)
 
   const handleClick = () => {
     dispatch({

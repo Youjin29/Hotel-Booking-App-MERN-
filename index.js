@@ -11,7 +11,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const app = express()
+const app = express();
 const port = process.env.PORT || 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,8 +44,8 @@ app.use((err, req, res, next) => {
   res.status(errorStatus).json({
     "success":"false",
     "status":errorStatus,
-    "message": errorMessage,
-    "stack": err.stack
+    "message":errorMessage,
+    "stack":err.stack
   });
 });
 

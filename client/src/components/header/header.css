@@ -46,7 +46,7 @@
   height: 44px;
   width: 90px;
   border-radius: 20px;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 .headerListSlider[value="stays"]{

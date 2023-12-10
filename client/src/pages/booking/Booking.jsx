@@ -31,8 +31,6 @@ const Booking = () => {
 
     const noOfDays = findDays(startDate, endDate);
     const noOfRooms = Object.values(roomsDetail).flat().length;
-   
-    console.log(data)
     
     useEffect(() => {
         const fetchData = async () => {

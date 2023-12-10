@@ -20,7 +20,6 @@ const BookingAlert = (props) => {
         try{
             await axios.delete(`/booking/${user._id}/${props.value}`);
             props.setOpen(false);
-            navigate("/account");
             props.refetch();
         } catch(err) {
             alert("You are not authenticated, please log in again");
